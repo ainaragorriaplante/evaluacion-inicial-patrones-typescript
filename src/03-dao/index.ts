@@ -88,3 +88,8 @@ export async function runDaoDemo(): Promise<void> {
   users = await userDao.selectAll();
   console.log('Lista final de usuarios en base de datos:', users);
 }
+
+// Ejecutar demostración si el archivo se ejecuta directamente con Node/ts-node
+if (typeof require !== 'undefined' && require.main === module) {
+  runDaoDemo();
+}
