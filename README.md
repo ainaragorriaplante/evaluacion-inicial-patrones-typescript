@@ -10,18 +10,23 @@ Fecha: 22/09/2026
 Además debe contener una tabla:
 Patrón
                         Implementado    Entendido
-Singleton                   Sí/No         Sí/No
-Factory                     Sí/No         Sí/No 
-DAO                         Sí/No         Sí/No
-Dependency Injection        Sí/No         Sí/No
+Singleton                   Sí              Sí
+Factory                     Sí              No 
+DAO                         Sí              No
+Dependency Injection        Sí              No
 
 
 Finalmente responde brevemente:
 ¿Qué patrón te ha resultado más sencillo?
+El singleton
 ¿Cuál te ha resultado más complicado?
+Las dependencias, y los propios conceptos
 ¿Cuál utilizarías con más frecuencia?
+El singleton
 ¿Qué patrón o concepto crees que será especialmente útil en desarrollo móvil?
+El singleton, para la verificaión
 ¿Qué patrón crees que aparecerá con frecuencia cuando trabajemos con NestJS?
+La inyección de dependencias
 
 ## Estructura del Proyecto
 
