@@ -3,18 +3,19 @@ export interface User {
     name: string;
     email: string;
 }
-export interface UserDao {
-    get(id: number): Promise<User | null>;
-    getAll(): Promise<User[]>;
-    save(user: User): Promise<void>;
-    update(user: User): Promise<void>;
-    delete(id: number): Promise<void>;
+export interface UserDAO {
+    selectAll(): Promise<User[]>;
+    selectById(id: number): Promise<User | null>;
+    insert(user: User): Promise<void>;
+    update(user: User): Promise<boolean>;
+    delete(id: number): Promise<boolean>;
 }
-export declare class InMemoryUserDao implements UserDao {
+export declare class InMemoryUserDAO implements UserDAO {
     private users;
-    get(id: number): Promise<User | null>;
-    getAll(): Promise<User[]>;
-    save(user: User): Promise<void>;
-    update(user: User): Promise<void>;
-    delete(id: number): Promise<void>;
+    selectAll(): Promise<User[]>;
+    selectById(id: number): Promise<User | null>;
+    insert(user: User): Promise<void>;
+    update(user: User): Promise<boolean>;
+    delete(id: number): Promise<boolean>;
 }
+export declare function runDaoDemo(): Promise<void>;

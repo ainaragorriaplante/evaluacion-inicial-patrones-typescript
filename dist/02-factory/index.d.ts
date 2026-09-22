@@ -1,19 +1,20 @@
-export interface Product {
-    operation(): string;
+export interface Notification {
+    send(message: string, recipient: string): void;
 }
-export declare class ConcreteProductA implements Product {
-    operation(): string;
+export declare class EmailNotification implements Notification {
+    send(message: string, recipient: string): void;
 }
-export declare class ConcreteProductB implements Product {
-    operation(): string;
+export declare class PushNotification implements Notification {
+    send(message: string, recipient: string): void;
 }
-export declare abstract class Creator {
-    abstract factoryMethod(): Product;
-    someOperation(): string;
+export declare class SmsNotification implements Notification {
+    send(message: string, recipient: string): void;
 }
-export declare class ConcreteCreatorA extends Creator {
-    factoryMethod(): Product;
+export declare class WhatsAppNotification implements Notification {
+    send(message: string, recipient: string): void;
 }
-export declare class ConcreteCreatorB extends Creator {
-    factoryMethod(): Product;
+export type NotificationType = 'email' | 'push' | 'sms' | 'whatsapp';
+export declare class NotificationFactory {
+    static create(type: NotificationType): Notification;
 }
+export declare function runFactoryDemo(): void;
